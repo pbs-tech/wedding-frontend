@@ -1,26 +1,61 @@
-## AWS Amplify Vue.js Starter Template
+# wedding-frontend
 
-This repository provides a starter template for creating applications using Vue.js and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
+This template should help get you started developing with Vue 3 in Vite.
 
-## Overview
+## Recommended IDE Setup
 
-This template equips you with a foundational Vue application integrated with AWS Amplify, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured AWS services like Cognito, AppSync, and DynamoDB.
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Features
+## Type Support for `.vue` Imports in TS
 
-- **Authentication**: Setup with Amazon Cognito for secure user authentication.
-- **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
-- **Database**: Real-time database powered by Amazon DynamoDB.
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-## Deploying to AWS
+## Customize configuration
 
-For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/vue/start/quickstart/#deploy-a-fullstack-app-to-aws) of our documentation.
+See [Vite Configuration Reference](https://vite.dev/config/).
 
+## Project Setup
 
-## Security
+```sh
+npm install
+```
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+### Compile and Hot-Reload for Development
 
-## License
+```sh
+npm run dev
+```
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+npm run test:unit
+```
+
+### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+
+```sh
+npm run test:e2e:dev
+```
+
+This runs the end-to-end tests against the Vite development server.
+It is much faster than the production build.
+
+But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+
+```sh
+npm run build
+npm run test:e2e
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```

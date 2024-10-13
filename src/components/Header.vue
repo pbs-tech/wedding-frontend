@@ -1,3 +1,13 @@
+<script setup lang="ts">
+    import { ref } from 'vue'
+
+    const links = ref([
+        { name: 'Venue', href: '#' },
+        { name: 'Schedule', href: '#' },
+        { name: 'RSVP', href: '#' }
+    ])
+</script>
+
 <template>
     <section>
         <div class="container">
@@ -18,11 +28,3 @@
         </div>
     </section>
 </template>
-  
-<script setup>
-    const links = [
-        { name: 'Venue', href: '#' },
-        { name: 'Schedule', href: '#' },
-        { name: 'RSVP', href: '#' },
-    ]
-</script>

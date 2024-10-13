@@ -40,7 +40,7 @@ const scheduleItems = ref([{
                     class="text-primary text-center text-2xl"
                     >
                         <span
-                            class="bg-background font-bold text-4xl p-5 flex h-[30px] w-full w-[100px] items-center justify-center text-center rounded text-primary"
+                            class="bg-background font-bold text-4xl p-5 flex h-[30px] w-full items-center justify-center text-center rounded text-primary"
                         >
                         {{ item.time }}
                         </span>

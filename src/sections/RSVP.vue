@@ -10,10 +10,10 @@
             <h2> RSVP </h2>
             <div class="content">
                 <FormText label="Name"></FormText>
-                <FormRSVPInput v-model="rsvp"></FormRSVPInput>
-                <FormText label="+1 Name" v-if="rsvp==='yes'"></FormText>
-                <FormAreaText label="Dietary Requirements" v-if="rsvp==='yes'"></FormAreaText>
-                <FormText label="Request A Song" v-if="rsvp==='yes'"></FormText>
+                <FormRSVPInput></FormRSVPInput>
+                <FormText label="+1 Name"></FormText>
+                <FormAreaText label="Dietary Requirements"></FormAreaText>
+                <FormText label="Request A Song"></FormText>
 
             </div>    
             <div class="flex px-12 justify-center">

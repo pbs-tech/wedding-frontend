@@ -3,6 +3,6 @@
 
 Simple website made using Typescript with a serverless backend. 
 Frameworks used:
-    vue
-    tailwind css components
-    pinia state storage 
+    - vue
+    - tailwind css components
+    - pinia state storage 

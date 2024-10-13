@@ -1,0 +1,52 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    
+    h1 {
+        @apply text-6xl m-5 font-bold text-primary
+    }
+    h2 {
+        @apply text-5xl m-7 font-bold text-primary
+    }
+    h3 {
+        @apply m-5 text-3xl font-bold text-primary
+    }
+    h4 {
+        @apply font-bold text-primary
+    }
+    section {
+        @apply p-6
+    }
+    p {
+        @apply m-5 p-5 text-primary
+    }
+    a {
+        @apply px-5
+    }
+}
+
+@layer components {
+    .container {
+        @apply mx-auto max-w-4xl
+    }
+    .content {
+        @apply px-12 pb-12
+    }
+    .form-item-div {
+        @apply p-4
+    }
+    .form-label {
+        @apply mb-[10px] block text-base text-primary font-medium
+    }
+    .form-input-text {
+        @apply w-full bg-background rounded-md border text-primary border-solid border-primary py-[10px] pr-3 pl-12 outline-none transition disabled:cursor-default placeholder-primary
+    }
+}
+
+
+::selection {
+    background:
+}

@@ -10,6 +10,5 @@
     <About/>
     <Venue/>
     <Schedule/>
-    <RSVP/>
 </template>
   

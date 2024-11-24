@@ -11,16 +11,24 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
+    "aws-amplify": "^6.6.6",
     "pinia": "^2.2.4",
     "vue": "^3.5.10",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@aws-amplify/backend": "^1.5.0",
+    "@aws-amplify/backend-cli": "^1.2.9",
     "@vitejs/plugin-vue": "^5.1.4",
     "autoprefixer": "^10.4.20",
+    "aws-cdk": "^2.163.1",
+    "aws-cdk-lib": "^2.163.1",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.24.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
-    "typescript": "^5.5.3",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3",
     "vite": "^5.4.8",
     "vue-tsc": "^2.1.6"
   }

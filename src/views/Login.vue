@@ -12,10 +12,11 @@
     // Login method
     const login = async () => {
     try {
-        await authStore.login(password.value);
+        await authStore.login(password.value);        
         router.push('/');
     } catch (error) {
         console.error(error);
+        alert('Incorrect password, please check the invite');
     }
     };
 </script>
@@ -31,7 +32,7 @@
                 <input v-model="password" class="form-input-text" type="text"  label="Password"/>
             </div>    
             <div class="flex px-12 justify-center">
-                <Button v-on:click.prevent()="login()" label="Login"/>
+                <Button v-on:click.prevent()="login()" v-on:keyup.enter="login()" label="Login"/>
             </div>
         </div>
     </section>

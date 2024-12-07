@@ -10,8 +10,7 @@ interface AuthState {
   user: User | null;
   refreshTokenTimeout: NodeJS.Timeout | null;
   isRefreshing: boolean;
-  initialized: boolean; 
-
+  initialized: boolean;
 }
 
 const baseUrl = `${import.meta.env.VITE_API_URL}`;
@@ -24,9 +23,8 @@ export const useAuthStore = defineStore({
       ? { jwtToken: localStorage.getItem("jwtToken")! }
       : null,
     refreshTokenTimeout: null,
-    isRefreshing: false, // Initialize refresh status to false
-    initialized: false
-
+    isRefreshing: false, // Prevent multiple concurrent refreshes
+    initialized: false,  // Flag to check if the store has been initialized with the token
   }),
   persist: true,
   actions: {
@@ -38,7 +36,6 @@ export const useAuthStore = defineStore({
           { headers: { "Content-Type": "application/json" } }
         );
         
-        // Save the token to localStorage only if it's new
         const newToken = response.data.jwtToken;
         if (this.user?.jwtToken !== newToken) {
           this.user = { jwtToken: newToken };
@@ -61,7 +58,7 @@ export const useAuthStore = defineStore({
 
     // Refresh token action
     async refreshToken(): Promise<void> {
-        if (this.isRefreshing || !this.user?.jwtToken) return;  // Prevent redundant refresh
+      if (this.isRefreshing || !this.user?.jwtToken) return;  // Prevent redundant refresh
 
       try {
         this.isRefreshing = true; // Set the refresh flag to true to prevent duplicate refreshes
@@ -92,11 +89,10 @@ export const useAuthStore = defineStore({
 
     // Start the refresh token timer based on JWT expiration
     startRefreshTokenTimer(): void {
-      if (!this.user?.jwtToken || this.initialized) return;  // Early return if no token
+      if (!this.user?.jwtToken || this.initialized) return;  // Prevent redundant setup
 
       // Clear any existing timer before setting a new one
-    this.stopRefreshTokenTimer();
-    this.refreshTokenTimeout = null;
+      this.stopRefreshTokenTimer();
 
       const [header, payload] = this.user.jwtToken.split('.');  // Destructure JWT parts
       if (!payload || !header) return;  // Return early if no payload
@@ -109,11 +105,10 @@ export const useAuthStore = defineStore({
         const timeout = expiresAt - Date.now() - 60 * 1000;  // 1 minute before expiration
         if (timeout > 0) {
           this.refreshTokenTimeout = setTimeout(() => this.refreshToken(), timeout);
-          this.initialized = true;
+          this.initialized = true; // Mark the store as initialized
         } else {
           console.warn("JWT token already expired or invalid");
           this.initialized = true;
-
         }
       } catch (error) {
         console.error("Failed to parse JWT token:", error);
@@ -138,7 +133,7 @@ export const useAuthStore = defineStore({
       this.user = null;
       localStorage.removeItem("jwtToken");
       this.stopRefreshTokenTimer();
-      this.initialized = false;
+      this.initialized = false;  // Reset initialized flag on logout
       console.log("Logged out successfully");
     },
   }

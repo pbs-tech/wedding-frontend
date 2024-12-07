@@ -18,13 +18,12 @@ const baseUrl = `${import.meta.env.VITE_API_URL}`;
 export const useAuthStore = defineStore({
   id: "auth",
   state: (): AuthState => ({
-    // Try to get the JWT token from localStorage on initialization
     user: localStorage.getItem("jwtToken")
       ? { jwtToken: localStorage.getItem("jwtToken")! }
       : null,
     refreshTokenTimeout: null,
-    isRefreshing: false, // Prevent multiple concurrent refreshes
-    initialized: false,  // Flag to check if the store has been initialized with the token
+    isRefreshing: false,
+    initialized: false,
   }),
   persist: true,
   actions: {
@@ -35,16 +34,24 @@ export const useAuthStore = defineStore({
           { "UserPassword": password },
           { headers: { "Content-Type": "application/json" } }
         );
+        console.log('Received token:', response.data.jwtToken);
+        console.log('Stored token in localStorage:', localStorage.getItem('jwtToken'));
         
+        // Check if a token is returned and set it in user state
         const newToken = response.data.jwtToken;
-        if (this.user?.jwtToken !== newToken) {
-          this.user = { jwtToken: newToken };
-          localStorage.setItem("jwtToken", newToken); // Persist token
+        if (newToken) {
+          // Only update if token is different or the user is not logged in
+          if (this.user?.jwtToken !== newToken) {
+            this.user = { jwtToken: newToken };
+            localStorage.setItem("jwtToken", newToken); // Persist token in localStorage
+          }
+
+          // Start the token refresh timer after successful login
+          this.startRefreshTokenTimer();
+          console.log("Logged in successfully:", this.user.jwtToken);
+        } else {
+          throw new Error('No JWT token received after login');
         }
-        
-        // Start refresh token timer
-        this.startRefreshTokenTimer();
-        console.log("Logged in successfully:", this.user.jwtToken);
 
       } catch (error) {
         console.error("Login failed:", error);
@@ -61,51 +68,46 @@ export const useAuthStore = defineStore({
       if (this.isRefreshing || !this.user?.jwtToken) return;  // Prevent redundant refresh
 
       try {
-        this.isRefreshing = true; // Set the refresh flag to true to prevent duplicate refreshes
+        this.isRefreshing = true;
         const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/refresh`, 
           {},
           { headers: { "Content-Type": "application/json" } }
         );
         
         const newToken = response.data.jwtToken;
-        // Only update the token if it has changed
-        if (this.user.jwtToken !== newToken) {
+        if (newToken && this.user?.jwtToken !== newToken) {
           this.user = { jwtToken: newToken };
           localStorage.setItem("jwtToken", newToken); // Persist token
-          console.log("JWT token refreshed:", this.user.jwtToken);
         }
-        
-        // Reset the refresh token timer
-        this.startRefreshTokenTimer();
 
+        this.startRefreshTokenTimer();
       } catch (error) {
         console.error("Token refresh failed:", error);
         alert("Session expired, please log in again.");
         this.logout();  // Logout on refresh failure
       } finally {
-        this.isRefreshing = false; // Reset refresh flag after operation
+        this.isRefreshing = false;
       }
     },
 
     // Start the refresh token timer based on JWT expiration
     startRefreshTokenTimer(): void {
-      if (!this.user?.jwtToken || this.initialized) return;  // Prevent redundant setup
+      if (!this.user?.jwtToken || this.initialized) return;
 
-      // Clear any existing timer before setting a new one
       this.stopRefreshTokenTimer();
 
-      const [header, payload] = this.user.jwtToken.split('.');  // Destructure JWT parts
-      if (!payload || !header) return;  // Return early if no payload
+      const [header, payload] = this.user.jwtToken.split('.');
+      if (!payload || !header) return;
 
       try {
         const jwtPayload = JSON.parse(atob(payload));
         const expiresAt = jwtPayload?.exp * 1000; // Convert to milliseconds
-        if (!expiresAt) return;  // Return early if no expiration time
+        if (!expiresAt) return;
 
-        const timeout = expiresAt - Date.now() - 60 * 1000;  // 1 minute before expiration
+        const timeout = expiresAt - Date.now() - 60 * 1000;  // Refresh 1 minute before expiration
         if (timeout > 0) {
           this.refreshTokenTimeout = setTimeout(() => this.refreshToken(), timeout);
-          this.initialized = true; // Mark the store as initialized
+          this.initialized = true;
         } else {
           console.warn("JWT token already expired or invalid");
           this.initialized = true;
@@ -133,7 +135,7 @@ export const useAuthStore = defineStore({
       this.user = null;
       localStorage.removeItem("jwtToken");
       this.stopRefreshTokenTimer();
-      this.initialized = false;  // Reset initialized flag on logout
+      this.initialized = false;
       console.log("Logged out successfully");
     },
   }

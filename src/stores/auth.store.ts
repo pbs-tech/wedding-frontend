@@ -99,7 +99,7 @@ export const useAuthStore = defineStore({
     this.refreshTokenTimeout = null;
 
       const [header, payload] = this.user.jwtToken.split('.');  // Destructure JWT parts
-      if (!payload) return;  // Return early if no payload
+      if (!payload || !header) return;  // Return early if no payload
 
       try {
         const jwtPayload = JSON.parse(atob(payload));

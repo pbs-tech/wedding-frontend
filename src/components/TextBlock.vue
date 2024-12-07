@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+    <div class="w-full px-4">
         <div class="mt-10">     
             <h3>
                 Lorem ipsum dolor sit amet.
@@ -13,13 +13,6 @@
                 Vestibulum ut congue felis, non malesuada ipsum.
                 Curabitur feugiat arcu non laoreet commodo.
               </p>
-
-              <a
-                href="javascript:void(0)"
-                class="m-5 p-5 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90"
-              >
-                Get Started
-              </a>
             </div>
           </div>
 </template>

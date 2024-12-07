@@ -4,7 +4,6 @@ const { label } = defineProps({ label: String })
 
 <template>
     <a
-    href="javascript:void(0)"
     class="p-3 px-20 text-base font-medium text-center justify-center text-white border border-transparent rounded-md bg-primary hover:bg-opacity-90"
     >
       {{label}}

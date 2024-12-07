@@ -2,9 +2,9 @@
     import { ref } from 'vue'
 
     const links = ref([
+        { name: 'About', href: '#' },
         { name: 'Venue', href: '#' },
         { name: 'Schedule', href: '#' },
-        { name: 'RSVP', href: '#' }
     ])
 </script>
 

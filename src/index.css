@@ -26,12 +26,12 @@
     a {
         @apply px-5
     }
+    * {
+        @apply mx-auto max-w-4xl bg-background
+    }
 }
 
 @layer components {
-    .container {
-        @apply mx-auto max-w-4xl
-    }
     .content {
         @apply px-12 pb-12
     }
@@ -44,9 +44,4 @@
     .form-input-text {
         @apply w-full bg-background rounded-md border text-primary border-solid border-primary py-[10px] pr-3 pl-12 outline-none transition disabled:cursor-default placeholder-primary
     }
-}
-
-
-::selection {
-    background:
 }

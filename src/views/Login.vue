@@ -23,18 +23,26 @@
 
 
 <template>
-  <body class="m-10 justify-center">
-    <section class="mx-auto p-6 bg-inherit">
+    <div class="min-h-screen flex items-center justify-center">
+      <section class="mx-auto p-6 bg-inherit w-full max-w-md">
         <div class="container">
-            <h2 class="text-center"> Login </h2>
-            <div class="content">
-                <label for="password" class="form-label">Password </label>
-                <input v-model="password" class="form-input-text" type="text"  label="Password"/>
-            </div>    
-            <div class="flex px-12 justify-center">
-                <Button v-on:click.prevent()="login()" v-on:keyup.enter="login()" label="Login"/>
-            </div>
+          <h2 class="text-center mb-6">Login</h2>
+          <div class="content mb-4">
+            <label for="password" class="form-label">Password</label>
+            <input 
+              name="password" 
+              id="password" 
+              v-model="password" 
+              class="form-input-text" 
+              type="text" 
+              placeholder="Enter your password" 
+            />
+          </div>
+          <div class="flex justify-center">
+            <Button v-on:click.prevent="login()" v-on:keyup.enter="login()" label="Login" />
+          </div>
         </div>
-    </section>
-  </body>
-</template>
+      </section>
+    </div>
+  </template>
+  

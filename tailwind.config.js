@@ -19,10 +19,5 @@ export default {
       }
     },
   },
-  corePlugins: {
-    aspectRatio: false,
-  },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],}
+}
 

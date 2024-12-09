@@ -44,7 +44,7 @@
         @apply mb-[10px] block text-base text-primary font-medium font-averia uppercase
     }
     .form-input-text {
-        @apply w-full bg-background rounded-md border text-primary border-solid font-averia border-primary py-[10px] pr-3 pl-12 outline-none transition disabled:cursor-default placeholder-primary
+        @apply w-full bg-background rounded-md border text-primary border-solid font-averia border-primary py-[10px] pr-3 pl-3 outline-none transition disabled:cursor-default placeholder-primary
     }
     #time {
         @apply font-beth_ellen font-bold text-4xl p-1

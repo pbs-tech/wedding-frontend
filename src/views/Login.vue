@@ -24,10 +24,10 @@
 
 <template>
     <div class="min-h-screen flex items-center justify-center">
-      <section class="mx-auto p-6 bg-inherit w-full max-w-md">
+      <section class="mx-auto p-6 bg-inherit w-full">
         <div class="container">
           <h1 class="text-5xl text-center mb-6">Login</h1>
-          <div class="content mb-4">
+          <div class="content py-10 mb-4">
             <label for="password" class="form-label">Password</label>
             <input 
               name="password" 

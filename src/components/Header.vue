@@ -15,9 +15,7 @@
                 <div class="mx-auto">
                     <div class="mx-auto max-w-4xl">
                         <h4 class="text-primary font-averia">We'd love to invite you to the wedding of: </h4>
-                        <span>
-                            <h1> Alex Peebles &  Hana McRae</h1>
-                        </span>
+                        <h1 class="text-4xl lg:text-5xl">Alex Peebles & Hana McRae</h1>
                         <p class="mt-6 text-lg leading-8 text-primary">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
                     </div>
                     <div class="mx-auto mt-10 max-w-2xl lg:max-w-none">

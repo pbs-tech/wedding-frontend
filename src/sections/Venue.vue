@@ -4,7 +4,7 @@
 
 <template>
     <section>
-      <div class="container">
+      <div class="container" id="venue">
         <h2> Venue </h2>
         <div class="flex flex-wrap items-center justify-between">
             <TextBlock/>

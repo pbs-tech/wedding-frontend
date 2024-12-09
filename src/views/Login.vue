@@ -26,7 +26,7 @@
     <div class="min-h-screen flex items-center justify-center">
       <section class="mx-auto p-6 bg-inherit w-full max-w-md">
         <div class="container">
-          <h2 class="text-center mb-6">Login</h2>
+          <h1 class="text-5xl text-center mb-6">Login</h1>
           <div class="content mb-4">
             <label for="password" class="form-label">Password</label>
             <input 
@@ -39,7 +39,7 @@
             />
           </div>
           <div class="flex justify-center">
-            <Button v-on:click.prevent="login()" v-on:keyup.enter="login()" label="Login" />
+            <Button id="login-button" v-on:click.prevent="login()" v-on:keyup.enter="login()" label="Login" />
           </div>
         </div>
       </section>

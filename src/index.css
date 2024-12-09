@@ -4,30 +4,32 @@
 @tailwind utilities;
 
 @layer base {
-    
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-light text-primary font-beth_ellen
+    }
     h1 {
-        @apply text-6xl m-5 font-bold text-primary
+        @apply text-5xl m-4
     }
     h2 {
-        @apply text-5xl m-7 font-bold text-primary
+        @apply text-4xl m-7
     }
     h3 {
-        @apply m-5 text-3xl font-bold text-primary
-    }
-    h4 {
-        @apply font-bold text-primary
+        @apply m-5 text-3xl
     }
     section {
         @apply p-6
     }
     p {
-        @apply m-5 p-5 text-primary
+        @apply m-3 p-1 text-primary font-averia
     }
     a {
-        @apply px-5
+        @apply px-5 text-primary font-light font-beth_ellen text-4xl
     }
     * {
-        @apply mx-auto max-w-4xl bg-background
+        @apply mx-auto max-w-4xl bg-background text-lg
+    }
+    li {
+        @apply mx-auto py-1 uppercase font-averia
     }
 }
 
@@ -39,9 +41,18 @@
         @apply p-4
     }
     .form-label {
-        @apply mb-[10px] block text-base text-primary font-medium
+        @apply mb-[10px] block text-base text-primary font-medium font-averia uppercase
     }
     .form-input-text {
-        @apply w-full bg-background rounded-md border text-primary border-solid border-primary py-[10px] pr-3 pl-12 outline-none transition disabled:cursor-default placeholder-primary
+        @apply w-full bg-background rounded-md border text-primary border-solid font-averia border-primary py-[10px] pr-3 pl-12 outline-none transition disabled:cursor-default placeholder-primary
+    }
+    #time {
+        @apply font-beth_ellen font-bold text-4xl p-1
+    }
+    #event {
+        @apply text-2xl
+    }
+    #login-button {
+        @apply font-averia
     }
 }

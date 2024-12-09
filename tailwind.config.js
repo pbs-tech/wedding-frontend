@@ -7,12 +7,17 @@ export default {
   ],
   theme: {
     colors: {
-      'background': '#ffe4e6',
+      'background': '#f5c8c5',
       'white': '#ffffff',
-      'primary': '#831843',
+      'primary': '#ae3c41',
       'highlight': '#f87171'
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        beth_ellen : ["Beth Ellen", "cursive"],
+        averia: ["Averia", "serif"]
+      }
+    },
   },
   plugins: [],
 }

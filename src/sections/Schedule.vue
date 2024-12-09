@@ -30,7 +30,7 @@ const scheduleItems = ref([{
 
 <template>
     <section>
-        <div class="container">
+        <div class="container" id="schedule">
             <h2> Schedule </h2>
             <div>
                 <ol class="content space-y-3">
@@ -39,12 +39,12 @@ const scheduleItems = ref([{
                     :key="item.time"
                     class="text-primary text-center text-2xl"
                     >
-                        <span
-                            class="bg-background font-bold text-4xl p-5 flex h-[30px] w-full items-center justify-center text-center rounded text-primary"
+                        <span id="time"
+                            class="bg-background font-bold p-5 flex h-[30px] w-full items-center justify-center text-center rounded text-primary"
                         >
                         {{ item.time }}
                         </span>
-                        <span class="items-center justify-center text-center">
+                        <span id="event" class="items-center justify-center text-center">
                             {{ item.event }}
                         </span>                    
                     </li>

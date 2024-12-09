@@ -34,8 +34,14 @@
 }
 
 @layer components {
+    .container {
+        @apply mx-auto max-w-4xl
+    }
+    .responsive-iframe {
+        @apply absolute top-0 left-0 bottom-0 right-0
+    }
     .content {
-        @apply px-12 pb-12
+        @apply px-12 pb-12 
     }
     .form-item-div {
         @apply p-4

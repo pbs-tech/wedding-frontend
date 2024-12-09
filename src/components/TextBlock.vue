@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full px-4">
-        <div class="mt-10">     
+    <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+      <div class="mt-10">     
             <h3>
                 Lorem ipsum dolor sit amet.
             </h3>

@@ -5,16 +5,16 @@
 
 @layer base {
     h1, h2, h3, h4, h5, h6 {
-        @apply font-light text-primary font-beth_ellen
+        @apply font-light text-primary font-beth_ellen p-5 m-5
     }
     h1 {
-        @apply text-5xl m-4
+        @apply text-5xl
     }
     h2 {
-        @apply text-4xl m-7
+        @apply text-4xl
     }
     h3 {
-        @apply m-5 text-3xl
+        @apply text-3xl
     }
     section {
         @apply p-6
@@ -35,14 +35,15 @@
 
 @layer components {
     .container {
-        @apply mx-auto max-w-4xl
+        @apply mx-auto max-w-4xl relative
     }
     .responsive-iframe {
         @apply absolute top-0 left-0 bottom-0 right-0
     }
-    .content {
-        @apply px-12 pb-12 
+    .schedule-list, .login {
+        @apply p-12 relative
     }
+
     .form-item-div {
         @apply p-4
     }
@@ -61,4 +62,13 @@
     #login-button {
         @apply font-averia
     }
+    .loading-text {
+        @apply flex justify-center min-w-fit
+    }
+
+/* PostCSS Class for Centering and Spacing */
+.content {
+    @apply flex flex-col items-center justify-center gap-4 p-4;
+  }
+  
 }

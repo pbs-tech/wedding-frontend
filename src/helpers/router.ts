@@ -21,8 +21,12 @@ const routes = [
   ]
 
 export const router = createRouter({
-history: createMemoryHistory(),
-routes,
+  history: createMemoryHistory(),
+  routes,
+  scrollBehavior() {
+    // always scroll to top
+    return { top: 0 }
+  },
 })
 
 router.beforeEach((to) => {

@@ -33,7 +33,7 @@ const scheduleItems = ref([{
         <div class="container" id="schedule">
             <h2> Schedule </h2>
             <div>
-                <ol class="content space-y-3">
+                <ol class="schedule-list space-y-3">
                     <li
                     v-for="(item) in scheduleItems"
                     :key="item.time"

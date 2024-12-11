@@ -5,7 +5,7 @@ import Body from '../components/Body.vue'
 
 
 <template>
-  <body class="bg-background">
+  <body>
     <Header></Header>
     <Body></Body>
   </body>

@@ -92,7 +92,7 @@
         @apply mx-auto flex flex-wrap items-center justify-center text-center gap-4 p-2;
     }
     .subheading-flair {
-        @apply font-thin font-beth_ellen m-5 font-extralight
+        @apply font-beth_ellen m-5 font-extralight
     }
 
     .content {

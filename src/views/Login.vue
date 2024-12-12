@@ -56,31 +56,33 @@
 
 
 <template>
-  <div class="min-h-screen flex items-center justify-center">
-    <section class="mx-auto p-6 bg-inherit w-full">
+  <div class="login-view">
+    <section>
       <div class="container">
-        <h1 class="text-center mb-4">Login</h1>
-        
-        <div class="content">
+        <h1 id="login-title">Login</h1>
+        <div clas="login-content">
           <ScrapImg/>
+        </div>
+        <div class="login-content">
           <label for="password" class="form-label text-center block mb-2">Password</label> <!-- Added text-center and block -->
           <input 
             name="password" 
             id="password" 
             v-model="password" 
-            class="form-input-text mb-6"
+            class="form-input-text"
             type="password" 
             placeholder="Enter your password" 
           />
         </div>
-        <div class="content">
+        <div class="login-content">
           <h3 class="loading-text" v-show="loading">
             <span>Loading</span><span class="dots">{{ loadingDots }}</span>
           </h3>
         </div>
 
-        <div class="content">
+        <div class="login-content">
           <Button 
+            v-show="!loading"
             id="login-button" 
             v-on:click.prevent="login()" 
             v-on:keyup.enter="login()" 

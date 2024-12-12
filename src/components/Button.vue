@@ -3,9 +3,11 @@ const { label } = defineProps({ label: String })
 </script>
 
 <template>
+  <div class="login-content">
     <a
-    class="p-3 px-20 text-base font-medium text-center justify-center text-white border border-transparent rounded-md bg-primary hover:bg-opacity-90"
+    class="login-button-text"
     >
       {{label}}
     </a>
+  </div>
 </template>

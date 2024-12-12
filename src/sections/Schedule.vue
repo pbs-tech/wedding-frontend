@@ -33,18 +33,16 @@ const scheduleItems = ref([{
         <div class="container" id="schedule">
             <h2> Schedule </h2>
             <div>
-                <ol class="schedule-list space-y-3">
+                <ol class="schedule-list">
                     <li
                     v-for="(item) in scheduleItems"
                     :key="item.time"
-                    class="text-primary text-center text-2xl"
+                    class="list-item"
                     >
-                        <span id="time"
-                            class="bg-background font-bold p-5 flex h-[30px] w-full items-center justify-center text-center rounded text-primary"
-                        >
+                        <span class="schedule-time" id="time">
                         {{ item.time }}
                         </span>
-                        <span id="event" class="items-center justify-center text-center">
+                        <span class="schedule-event" id="event">
                             {{ item.event }}
                         </span>                    
                     </li>

@@ -5,10 +5,10 @@
 
 @layer base {
     h1, h2, h3, h4, h5, h6 {
-        @apply font-light text-primary font-beth_ellen p-5 m-5
+        @apply font-light text-primary font-beth_ellen p-2 m-2
     }
     h1 {
-        @apply text-5xl
+        @apply text-5xl text-center items-center justify-center
     }
     h2 {
         @apply text-4xl
@@ -17,7 +17,7 @@
         @apply text-3xl
     }
     section {
-        @apply p-6
+        @apply p-6 mx-auto w-full
     }
     p {
         @apply m-3 p-1 text-primary font-averia
@@ -29,21 +29,32 @@
         @apply mx-auto max-w-4xl bg-background text-lg
     }
     li {
-        @apply mx-auto py-1 uppercase font-averia
+        @apply mx-auto py-1 uppercase font-averia text-primary text-center text-2xl
     }
 }
 
 @layer components {
     .container {
-        @apply mx-auto max-w-4xl relative
+        @apply mx-auto max-w-full relative justify-center items-center
     }
     .responsive-iframe {
         @apply absolute top-0 left-0 bottom-0 right-0
     }
-    .schedule-list, .login {
-        @apply p-12 relative
+    .schedule-list {
+        @apply p-12 relative space-y-3
     }
-
+    .header {
+        @apply relative isolate overflow-hidden py-5 text-center
+    }
+    .header-link {
+        @apply flex flex-wrap gap-6 text-base font-semibold leading-7 text-primary w-full
+    }
+    #header-img {
+        @apply w-1/4 sm:w-1/5 md:w-1/6 lg:w-1/6 h-auto
+    }
+    #header-text {
+        @apply font-averia
+    }
     .form-item-div {
         @apply p-4
     }
@@ -51,13 +62,16 @@
         @apply mb-[10px] block text-base text-primary font-medium font-averia uppercase
     }
     .form-input-text {
-        @apply w-full bg-background rounded-md border text-primary border-solid font-averia border-primary py-[10px] pr-3 pl-3 outline-none transition disabled:cursor-default placeholder-primary
+        @apply w-full mb-6 bg-background rounded-md border text-primary border-solid font-averia border-primary py-[10px] pr-3 pl-3 outline-none transition disabled:cursor-default placeholder-primary
     }
     #time {
-        @apply font-beth_ellen font-bold text-4xl p-1
+        @apply font-beth_ellen font-bold text-4xl p-6 flex h-[30px] w-full items-center justify-center text-center rounded text-primary
+    }
+    .schedule-event {
+        @apply 
     }
     #event {
-        @apply text-2xl
+        @apply items-center justify-center text-center text-2xl
     }
     #login-button {
         @apply font-averia
@@ -65,10 +79,38 @@
     .loading-text {
         @apply flex justify-center min-w-fit
     }
+    #header-date {
+        @apply font-bold text-3xl
+    }
+    #header-location {
+        @apply text-3xl
+    }
+    #header-print {
+        @apply text-xl
+    }
+    .login-content {
+        @apply mx-auto flex flex-wrap items-center justify-center text-center gap-4 p-2;
+    }
+    .subheading-flair {
+        @apply font-thin font-beth_ellen m-5 font-extralight
+    }
 
-/* PostCSS Class for Centering and Spacing */
-.content {
-    @apply flex flex-col items-center justify-center gap-4 p-4;
-  }
-  
+    .content {
+       @apply flex flex-wrap items-center justify-between -mx-4 p-4
+    }
+    #login-button {
+        @apply p-2 items-center
+    }
+    .login-button-text {
+        @apply p-3 px-10 text-base font-medium text-center justify-center text-white border rounded-md bg-primary hover:bg-opacity-90 w-full sm:w-64 md:w-80 lg:w-96
+    }
+    #login-title {
+        @apply text-center mb-4
+    }
+    .login-view {
+        @apply min-h-screen flex items-center justify-center
+    }
+    .subheading {
+        @apply mt-6 text-3xl leading-8
+    }
 }

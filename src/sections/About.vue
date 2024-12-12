@@ -7,10 +7,9 @@
     <section>
         <div class="container" id="about">
             <h2> About </h2>
-            <div class="flex flex-wrap items-center justify-between -mx-4">
-                <TextBlock/>
+            <div class="content">
                 <ImageBlock/>
-
+                <TextBlock/>
             </div>
         </div>
     </section>

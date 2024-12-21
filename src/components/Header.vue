@@ -6,6 +6,7 @@
         { name: 'About', href: '#about' },
         { name: 'Venue', href: '#venue' },
         { name: 'Schedule', href: '#schedule' },
+        { name: 'Transport', href: '#transport' },
     ])
 </script>
 

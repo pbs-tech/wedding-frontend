@@ -23,7 +23,7 @@ async function initializeApp() {
     // Check if the token exists and is valid
     const jwtToken = authStore.user?.jwtToken;
     const jwtParts = jwtToken?.split('.');
-    
+
     if (jwtParts && jwtParts.length === 3) {
       // Only refresh the token if it's close to expiring (e.g., not too soon after login)
       const jwtBase64 = jwtParts[1];
@@ -32,7 +32,7 @@ async function initializeApp() {
       // Check if the token is nearing expiration
       const expires = new Date(jwtDecoded.exp * 1000);
       const expiresIn = expires.getTime() - Date.now();
-      
+
       if (expiresIn > 0 && expiresIn < 60 * 60 * 1000) { // Refresh only if token expires within 1 hour
         try {
           await authStore.refreshToken();

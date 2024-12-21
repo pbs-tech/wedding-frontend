@@ -1,31 +1,46 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useAuthStore } from "../stores";
+let scheduleItems = ref<{ time: string; event: string; }[]>([]);
+const dayScheduleItems = [
+    {
+        event: 'Arrival',
+        time: '13:00',
+    },
+    {
+        time: '14:00',
+        event: 'Ceremony',
+    },
+    {
+        time: '15:00',
+        event: 'Wedding Breakfast',
+    },
+];
 
-const scheduleItems = ref([{
-    time: '13:00',
-    event: 'Arrival',
-},
-{
-    time: '14:00',
-    event: 'Ceremony',
-},
-{
-    time: '15:00',
-    event: 'Wedding Breakfast',
-},
-{
-    time: '17:00',
-    event: 'Reception',
-},
-{
-    time: '19:00',
-    event: 'Pizz',
-},
-{
-    time: '00:00',
-    event: 'Farewell',
-},
-])
+const eveningScheduleItems = [
+    {
+        time: '17:00',
+        event: 'Reception',
+    },
+    {
+        time: '19:30',
+        event: 'Pizz',
+    },
+    {
+        time: '00:00',
+        event: 'Farewell',
+    },
+];
+
+const authStore = useAuthStore();
+const isDayGuest = authStore.isDayGuest();
+
+if (isDayGuest) {
+    scheduleItems = ref(dayScheduleItems.concat(eveningScheduleItems));
+} else {
+    scheduleItems = ref(eveningScheduleItems);
+}
+
 </script>
 
 <template>
@@ -44,7 +59,7 @@ const scheduleItems = ref([{
                         </span>
                         <span class="schedule-event" id="event">
                             {{ item.event }}
-                        </span>                    
+                        </span>
                     </li>
                 </ol>
             </div>

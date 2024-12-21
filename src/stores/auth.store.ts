@@ -4,6 +4,7 @@ import axios from "axios";
 // Define the structure of the user object
 interface User {
   jwtToken: string;
+  isDayGuest: boolean;
 }
 
 interface AuthState {
@@ -19,7 +20,7 @@ export const useAuthStore = defineStore({
   id: "auth",
   state: (): AuthState => ({
     user: localStorage.getItem("jwtToken")
-      ? { jwtToken: localStorage.getItem("jwtToken")! }
+      ? { jwtToken: localStorage.getItem("jwtToken")!, isDayGuest: Boolean(localStorage.getItem("isDayGuest")) }
       : null,
     refreshTokenTimeout: null,
     isRefreshing: false,
@@ -30,20 +31,23 @@ export const useAuthStore = defineStore({
     // Login action
     async login(password: string): Promise<void> {
       try {
-        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/auth`, 
+        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/auth`,
           { "UserPassword": password },
           { headers: { "Content-Type": "application/json" } }
         );
         console.log('Received token:', response.data.jwtToken);
         console.log('Stored token in localStorage:', localStorage.getItem('jwtToken'));
-        
+
         // Check if a token is returned and set it in user state
         const newToken = response.data.jwtToken;
-        if (newToken) {
+        const isDayGuest = this.getGuestTypeFromJwt(newToken);
+        console.log("is day guest? ", isDayGuest);
+        if (newToken && isDayGuest !== null) {
           // Only update if token is different or the user is not logged in
           if (this.user?.jwtToken !== newToken) {
-            this.user = { jwtToken: newToken };
+            this.user = { jwtToken: newToken, isDayGuest: isDayGuest };
             localStorage.setItem("jwtToken", newToken); // Persist token in localStorage
+            localStorage.setItem("isDayGuest", String(isDayGuest));
           }
 
           // Start the token refresh timer after successful login
@@ -69,15 +73,19 @@ export const useAuthStore = defineStore({
 
       try {
         this.isRefreshing = true;
-        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/refresh`, 
+        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/refresh`,
           {},
           { headers: { "Content-Type": "application/json" } }
         );
-        
+
         const newToken = response.data.jwtToken;
-        if (newToken && this.user?.jwtToken !== newToken) {
-          this.user = { jwtToken: newToken };
+        const isDayGuest = this.getGuestTypeFromJwt(newToken);
+
+        if (newToken &&  isDayGuest !== null && this.user?.jwtToken !== newToken) {
+          this.user = { jwtToken: newToken, isDayGuest: isDayGuest };
           localStorage.setItem("jwtToken", newToken); // Persist token
+          localStorage.setItem("isDayGuest", String(isDayGuest));
+
         }
 
         this.startRefreshTokenTimer();
@@ -129,11 +137,21 @@ export const useAuthStore = defineStore({
     isAuthenticated(): boolean {
       return !!this.user?.jwtToken;
     },
+    isDayGuest(): boolean {
+      return this.user?.isDayGuest ?? false;
+    },
+    getGuestTypeFromJwt(jwtToken: string): boolean {
+      const jwtBase64 = jwtToken?.split('.')[1];
 
+      const jwtDecoded = JSON.parse(atob(jwtBase64));
+      return jwtDecoded.isDayGuest;
+    },
     // Logout action: clear user data and token
     logout(): void {
       this.user = null;
       localStorage.removeItem("jwtToken");
+      localStorage.removeItem("isDayGuestType");
+
       this.stopRefreshTokenTimer();
       this.initialized = false;
       console.log("Logged out successfully");

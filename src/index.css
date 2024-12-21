@@ -22,8 +22,9 @@
     p {
         @apply m-3 p-1 text-primary font-averia
     }
-    a {
-        @apply px-5 text-primary font-light font-beth_ellen text-4xl
+
+    p > a, li > a {
+        @apply text-primary font-bold
     }
     * {
         @apply mx-auto max-w-4xl bg-background text-lg
@@ -31,11 +32,29 @@
     li {
         @apply mx-auto py-1 uppercase font-averia text-primary text-center text-2xl
     }
+    a:hover {
+        @apply underline
+    }
+    button {
+        @apply text-primary font-beth_ellen
+    }
 }
 
 @layer components {
     .container {
         @apply mx-auto max-w-full relative justify-center items-center
+    }
+    .text-block {
+        @apply h-full flex flex-col
+    }
+    .block-container {
+        @apply w-full p-4 lg:w-6/12
+    }
+    .img-container {
+        @apply flex flex-wrap items-center justify-center -mx-3 sm:-mx-4
+    }
+    .swiper-padding {
+       @apply w-full px-3 sm:px-4
     }
     .responsive-iframe {
         @apply absolute top-0 left-0 bottom-0 right-0
@@ -68,7 +87,7 @@
         @apply font-beth_ellen font-bold text-4xl p-6 flex h-[30px] w-full items-center justify-center text-center rounded text-primary
     }
     .schedule-event {
-        @apply 
+        @apply
     }
     #event {
         @apply items-center justify-center text-center text-2xl
@@ -91,12 +110,18 @@
     .login-content {
         @apply mx-auto flex flex-wrap items-center justify-center text-center gap-4 p-2;
     }
-    .subheading-flair {
-        @apply font-beth_ellen m-5 font-extralight
+    .flair {
+        @apply font-beth_ellen font-extralight text-base
+    }
+    .subheading > .flair {
+        @apply m-5
     }
 
     .content {
-       @apply flex flex-wrap items-center justify-between -mx-4 p-4
+       @apply flex flex-wrap items-center justify-center -mx-4 p-4
+    }
+    .grid-content {
+        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
     }
     #login-button {
         @apply p-2 items-center
@@ -112,5 +137,37 @@
     }
     .subheading {
         @apply mt-6 text-3xl leading-8
+    }
+    .swiper-container {
+        @apply relative;
+      }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        @apply bg-opacity-0;
+      }
+    .swiper-lazy {
+        @apply w-full h-48 object-cover flex justify-center items-center
+    }
+    .image-cover-img {
+        @apply rounded-2xl border-solid border-4 border-primary object-cover w-full h-80
+    }
+    .login-content > a, .header-link > a {
+        @apply p-5 text-primary font-light font-beth_ellen text-4xl
+    }
+    .login-content > a {
+        @apply text-background
+    }
+    .taxi-link {
+        @apply text-primary underline font-bold
+    }
+    ul .contact-list, ul .taxi-list {
+        @apply flex justify-center gap-4 w-full text-2xl
+    }
+    .header-link {
+        @apply transition duration-300 ease-in-out;
+    }
+    .nav-button {
+        @apply relative
     }
 }

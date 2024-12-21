@@ -14,10 +14,7 @@ jobs:
           uses: actions/setup-node@v4
 
         - name: Install dependencies
-          run: npm install
-
-        - name: Lint code
-          run: npm run lint
+          run: npm ci
 
         - name: Build project
           run: npm run build

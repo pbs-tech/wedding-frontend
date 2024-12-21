@@ -1,13 +1,4 @@
 {
-  "name": "wedding-frontend",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
-  },
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
@@ -44,5 +35,14 @@
     "vite": "^5.4.8",
     "vite-svg-loader": "^5.1.0",
     "vue-tsc": "^2.1.6"
-  }
+  },
+  "name": "wedding-frontend",
+  "private": true,
+  "scripts": {
+    "build": "vue-tsc -b && vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "version": "0.0.0"
 }

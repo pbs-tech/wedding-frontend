@@ -23,7 +23,7 @@
                     <br/>
                     <span class="subheading-flair"> at </span>
                     <br/>
-                    <span id="header-location">Healey Barn, Riding Mill</span>
+                    <span id="header-location">Healey Barn, Riding Mill <br/> NE44 6BN </span>
                     <br/>
                     <br/>
                     <span id="header-print">

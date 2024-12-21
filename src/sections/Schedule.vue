@@ -18,7 +18,7 @@ const scheduleItems = ref([{
     event: 'Reception',
 },
 {
-    time: '19:00',
+    time: '19:30',
     event: 'Pizz',
 },
 {

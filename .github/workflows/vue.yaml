@@ -14,7 +14,7 @@ jobs:
           uses: actions/setup-node@v4
 
         - name: Install dependencies
-          run: npm ci
+          run: npm ci --cache .npm --prefer-offline
 
         - name: Build project
           run: npm run build

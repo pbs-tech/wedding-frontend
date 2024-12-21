@@ -16,3 +16,5 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
       - id: double-quote-string-fixer
+      - id: pretty-format-json
+        args: [--autofix]

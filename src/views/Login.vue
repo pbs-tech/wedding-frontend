@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Button from "../components/Button.vue"; 
+  import Button from "../components/Button.vue";
   import { useAuthStore } from '../stores';
   import { router } from '../helpers';
   import { onBeforeUnmount, ref } from 'vue';
@@ -65,13 +65,13 @@
         </div>
         <div class="login-content">
           <label for="password" class="form-label text-center block mb-2">Password</label> <!-- Added text-center and block -->
-          <input 
-            name="password" 
-            id="password" 
-            v-model="password" 
+          <input
+            name="password"
+            id="password"
+            v-model="password"
             class="form-input-text"
-            type="password" 
-            placeholder="Enter your password" 
+            type="password"
+            placeholder="Enter your password"
           />
         </div>
         <div class="login-content">
@@ -81,12 +81,12 @@
         </div>
 
         <div class="login-content">
-          <Button 
+          <Button
             v-show="!loading"
-            id="login-button" 
-            v-on:click.prevent="login()" 
-            v-on:keyup.enter="login()" 
-            label="Login" 
+            id="login-button"
+            v-on:click.prevent="login()"
+            v-on:keyup.enter="login()"
+            label="Login"
           />
         </div>
       </div>

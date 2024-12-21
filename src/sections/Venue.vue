@@ -38,9 +38,9 @@
             </template>
             <template v-slot:content>
               <p>
-              <a href="https://crippsandco.com/healey-barn/">Healey Barn</a> is an 18th century stone barn set around a private sunny courtyard. 
-              Just outside Riding Mill, on the border of Northumberland and Durham, 
-              it's a 30 minutes away from the centre of Newcastle for those who are local.  
+              <a href="https://crippsandco.com/healey-barn/">Healey Barn</a> is an 18th century stone barn set around a private sunny courtyard.
+              Just outside Riding Mill, on the border of Northumberland and Durham,
+              it's a 30 minutes away from the centre of Newcastle for those who are local.
               </p>
               <p>
               Should you need accommodation, there are plenty of options in the surrounding area.

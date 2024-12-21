@@ -12,7 +12,7 @@
             :autoplay="{ delay: 5000 }"
             class="swiper-container"
           >
-            <swiper-slide 
+            <swiper-slide
               v-for="(image, index) in images"
               :key="index"
               class="swiper-slide">

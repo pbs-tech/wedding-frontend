@@ -9,7 +9,7 @@
       </nav>
     </header>
   </template>
-  
+
   <script setup>
   import { ref } from 'vue'
   import {
@@ -17,7 +17,7 @@
     DialogPanel,
     PopoverGroup,
   } from '@headlessui/vue'
-  
-  
+
+
   const mobileMenuOpen = ref(false)
   </script>

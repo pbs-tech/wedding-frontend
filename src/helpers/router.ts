@@ -5,7 +5,7 @@ import { useAuthStore } from '../stores';
 
 
 const routes = [
-    { 
+    {
       path: '/',
       name: 'main',
       component: MainView,
@@ -13,7 +13,7 @@ const routes = [
         requiresAuth: true
       }
     },
-     { 
+     {
       path: '/login',
       name: 'Login',
       component: LoginView,

@@ -31,13 +31,13 @@ export const useAuthStore = defineStore({
     // Login action
     async login(password: string): Promise<void> {
       try {
-        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/auth`, 
+        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/auth`,
           { "UserPassword": password },
           { headers: { "Content-Type": "application/json" } }
         );
         console.log('Received token:', response.data.jwtToken);
         console.log('Stored token in localStorage:', localStorage.getItem('jwtToken'));
-        
+
         // Check if a token is returned and set it in user state
         const newToken = response.data.jwtToken;
         const isDayGuest = this.getGuestTypeFromJwt(newToken);
@@ -73,11 +73,11 @@ export const useAuthStore = defineStore({
 
       try {
         this.isRefreshing = true;
-        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/refresh`, 
+        const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/refresh`,
           {},
           { headers: { "Content-Type": "application/json" } }
         );
-        
+
         const newToken = response.data.jwtToken;
         const isDayGuest = this.getGuestTypeFromJwt(newToken);
 

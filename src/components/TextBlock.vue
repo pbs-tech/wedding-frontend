@@ -1,15 +1,15 @@
 <template>
   <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
-    <div class="mt-10">     
+    <div class="mt-10">
       <slot name="title">
         <h3>
           Lorem ipsum dolor sit amet.
-        </h3>                  
+        </h3>
       </slot>
       <slot name="content">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Praesent odio dui, venenatis at tortor eget, dictum ultricies nulla. 
+          Praesent odio dui, venenatis at tortor eget, dictum ultricies nulla.
           Sed eu sem eget justo luctus varius nec non nisi.
           Phasellus id pharetra arcu.
           Nam suscipit pretium sapien ut ultrices.

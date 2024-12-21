@@ -51,7 +51,7 @@
         @apply flex flex-wrap items-center justify-between -mx-3 sm:-mx-4
     }
     .swiper-padding {
-       @apply w-full px-3 sm:px-4 
+       @apply w-full px-3 sm:px-4
     }
     .responsive-iframe {
         @apply absolute top-0 left-0 bottom-0 right-0
@@ -84,7 +84,7 @@
         @apply font-beth_ellen font-bold text-4xl p-6 flex h-[30px] w-full items-center justify-center text-center rounded text-primary
     }
     .schedule-event {
-        @apply 
+        @apply
     }
     #event {
         @apply items-center justify-center text-center text-2xl
@@ -135,13 +135,13 @@
     .swiper-container {
         @apply relative;
       }
-      
+
     .swiper-button-next,
     .swiper-button-prev {
         @apply bg-opacity-0;
       }
     .swiper-slide {
-        @apply w-full h-48 object-cover flex justify-center items-center 
+        @apply w-full h-48 object-cover flex justify-center items-center
     }
     .image-cover-img {
         @apply rounded-2xl border-solid border-4 border-primary object-cover w-full h-80
@@ -154,5 +154,8 @@
     }
     .taxi-link {
         @apply text-primary underline font-bold
+    }
+    .contact-numbers {
+        @apply text-primary font-bold text-center items-center justify-center
     }
 }

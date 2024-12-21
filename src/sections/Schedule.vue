@@ -59,7 +59,7 @@ if (isDayGuest) {
                         </span>
                         <span class="schedule-event" id="event">
                             {{ item.event }}
-                        </span>                    
+                        </span>
                     </li>
                 </ol>
             </div>

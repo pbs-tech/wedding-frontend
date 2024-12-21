@@ -35,6 +35,9 @@
     a:hover {
         @apply underline
     }
+    button {
+        @apply text-primary font-beth_ellen
+    }
 }
 
 @layer components {
@@ -48,7 +51,7 @@
         @apply w-full p-4 lg:w-6/12
     }
     .img-container {
-        @apply flex flex-wrap items-center justify-between -mx-3 sm:-mx-4
+        @apply flex flex-wrap items-center justify-center -mx-3 sm:-mx-4
     }
     .swiper-padding {
        @apply w-full px-3 sm:px-4
@@ -107,12 +110,15 @@
     .login-content {
         @apply mx-auto flex flex-wrap items-center justify-center text-center gap-4 p-2;
     }
-    .subheading-flair {
-        @apply font-beth_ellen m-5 font-extralight
+    .flair {
+        @apply font-beth_ellen font-extralight text-base
+    }
+    .subheading > .flair {
+        @apply m-5
     }
 
     .content {
-       @apply flex flex-wrap items-center justify-between -mx-4 p-4
+       @apply flex flex-wrap items-center justify-center -mx-4 p-4
     }
     .grid-content {
         @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
@@ -140,7 +146,7 @@
     .swiper-button-prev {
         @apply bg-opacity-0;
       }
-    .swiper-slide {
+    .swiper-lazy {
         @apply w-full h-48 object-cover flex justify-center items-center
     }
     .image-cover-img {
@@ -155,7 +161,13 @@
     .taxi-link {
         @apply text-primary underline font-bold
     }
-    .contact-numbers {
-        @apply text-primary font-bold text-center items-center justify-center
+    ul .contact-list, ul .taxi-list {
+        @apply flex justify-center gap-4 w-full text-2xl
+    }
+    .header-link {
+        @apply transition duration-300 ease-in-out;
+    }
+    .nav-button {
+        @apply relative
     }
 }

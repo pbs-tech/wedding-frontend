@@ -31,10 +31,10 @@
                         </p>
                             <ul class="taxi-list">
                                 <li>
-                                    <a class="taxi-link" href="https://hexham.ecocabs.com">Hexham Eco Cabs</a> <br/> 01434 600600
+                                    <a class="taxi-link" href="https://hexham.ecocabs.com">Hexham Eco Cabs</a> <br/> <b> 01434 600600 </b>
                                 </li>
                                 <li>
-                                    <a class="taxi-link" href="https://www.executive-taxis.co.uk">Executive Taxis </a> <br/> 01434 605601
+                                    <a class="taxi-link" href="https://www.executive-taxis.co.uk">Executive Taxis </a> <br/> <b> 01434 605601 </b>
                                 </li>
                             </ul>
                     </template>

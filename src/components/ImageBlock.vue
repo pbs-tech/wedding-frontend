@@ -11,6 +11,7 @@
             navigation
             :autoplay="{ delay: 5000 }"
             class="swiper-container"
+            :lazy="true"
           >
             <swiper-slide
               v-for="(image, index) in images"
@@ -19,8 +20,9 @@
               <img
                 :src="image.src"
                 :alt="image.alt"
-                class="image-cover-img"
+                class="image-cover-img swiper-lazy"
               />
+              <div class="swiper-lazy-preloader"></div>
             </swiper-slide>
           </swiper>
         </div>

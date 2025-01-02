@@ -4,6 +4,7 @@
     import Schedule from "../sections/Schedule.vue";
     import Transport from "../sections/Transport.vue";
     import RSVP from "../sections/RSVP.vue";
+    import FAQs from "../sections/FAQs.vue";
 </script>
 
 <template>
@@ -11,5 +12,6 @@
     <Venue/>
     <Schedule/>
     <Transport/>
+    <FAQs/>
     <RSVP/>
 </template>

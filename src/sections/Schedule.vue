@@ -5,10 +5,10 @@ let scheduleItems = ref<{ time: string; event: string; }[]>([]);
 const dayScheduleItems = [
     {
         event: 'Arrival',
-        time: '13:00',
+        time: '14:00',
     },
     {
-        time: '14:00',
+        time: '14:30',
         event: 'Ceremony',
     },
     {
@@ -24,7 +24,7 @@ const eveningScheduleItems = [
     },
     {
         time: '19:30',
-        event: 'Pizz',
+        event: 'Pizza',
     },
     {
         time: '00:00',

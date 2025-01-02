@@ -74,6 +74,9 @@
     #header-text {
         @apply font-averia
     }
+    #header-dress-code {
+        @apply text-2xl
+    }
     .form-item-div {
         @apply p-4
     }

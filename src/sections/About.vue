@@ -36,12 +36,12 @@
                     </template>
                     <template v-slot:content>
                         <p>
-                            Although we'd known of each other for years by having mutual friends at uni,
+                            Although we'd known of each other for years by having mutual friends,
                             it wasn't until we both worked together at Accenture that we started talking.
-                            Hana left for a new job, I came along to the leaving party and the rest is history.
+                            Hana left for a new job, Alex came along to the leaving party and the rest is history.
                         </p>
                         <p>
-                            I moved in with Hana in July 2023, we got engaged in August 2024 before moving to our new home in Gateshead the week after.
+                            We moved into Hana's flat together July 2023, got engaged in August 2024 before moving to our new home in Gateshead the week after.
                         </p>
                     </template>
                 </TextBlock>

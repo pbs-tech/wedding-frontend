@@ -1,5 +1,4 @@
 <script setup lang="ts">
-    import TextBlock from "../components/TextBlock.vue";
     const faqs = [
         {
             question: "What is the dress code?",

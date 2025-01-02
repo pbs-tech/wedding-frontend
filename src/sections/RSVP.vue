@@ -6,7 +6,7 @@
                 <p>
                     We hope you can make it! Please RSVP with any allergies / dietary requirements using the card sent as soon as possible but especially by the <b> 1st of May 2025 </b> otherwise we will have to assume you cannot make it.
                     <br/>
-                    You can also message us using the numbers / links below. :
+                    You can also message us using the numbers / links below:
                 </p>
                 <ul class="contact-list">
                     <li> <a href="https://wa.me/447519019492"> <b>Alex </b> <br/> 07519 019492 </a> </li>

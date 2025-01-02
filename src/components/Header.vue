@@ -9,6 +9,8 @@
         { name: 'Venue', href: '#venue' },
         { name: 'Schedule', href: '#schedule' },
         { name: 'Transport', href: '#transport' },
+        { name: 'FAQs', href: '#faqs'},
+        { name: 'RSVP', href: '#rsvp' },
     ])
     const isMenuOpen = ref(false);
 
@@ -21,7 +23,6 @@
     <section>
         <div class="container">
             <div class="nav-button">
-                <!-- Mobile toggle button (hamburger icon) -->
                 <button
                 @click="toggleMenu"
                 aria-label="Toggle menu"
@@ -46,6 +47,9 @@
                     <span class="flair"> at </span>
                     <br/>
                     <span id="header-location">Healey Barn, Riding Mill <br/> NE44 6BN </span>
+                    <br/>
+                    <br/>
+                    <span id="header-dress-code">Dress code: <br/> Black Tie Formal</span>
                 </p>
             </div>
 

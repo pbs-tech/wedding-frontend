@@ -1,8 +1,9 @@
 <script setup lang="ts">
+    import FAQItem from "../components/FAQItem.vue";
     const faqs = [
         {
             question: "What is the dress code?",
-            answer: "We’re excited to celebrate with you in style! Our dress code is Black Tie Formal, which calls for a sophisticated and elegant look. For those wearing suits, this is a tuxedo with a bow tie, while those opting for a dress are encouraged to choose floor-length or elegant cocktail options. Think timeless and refined — bold colours, luxurious fabrics, and polished details. We can't wait to see everyone dressed to the nines! P.S. It goes without saying but please do not wear white, ivory, black or very light coloured dresses x"
+            answer: "<p> We’re excited to celebrate with you in style! <p/> Our dress code is Black Tie Formal, which calls for a sophisticated and elegant look. For those wearing suits, this is a tuxedo with a bow tie, while those opting for a dress are encouraged to choose floor-length or elegant cocktail options. Think timeless and refined — bold colours, luxurious fabrics, and polished details. We can't wait to see everyone dressed to the nines! P.S. It goes without saying but please do not wear white, ivory, black or very light coloured dresses x"
         },
         {
             question: "Do you have a gift registry?",
@@ -26,14 +27,14 @@
             <h2> FAQs </h2>
             <div class="content">
                 <div v-for="(item) in faqs">
-                    <slot name = "faq-question">
-                            <h3> {{ item.question }} </h3>
-                    </slot>
-                    <slot name="faq-answer">
-                        <p>
-                            {{ item.answer }}
-                        </p>
-                    </slot>
+                    <FAQitem>
+                        <template v-slot:faq-question>
+                                <h3> {{ item.question }} </h3>
+                        </template>
+                        <template v-slot:faq-answer>
+                               <p> {{ item.answer }} </p>
+                        </template>
+                    </FAQitem>
                 </div>
             </div>
         </div>

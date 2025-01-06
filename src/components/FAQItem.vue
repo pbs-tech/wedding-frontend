@@ -1,10 +1,10 @@
 <template>
-    <slot v-slot:faq-question>
+    <slot name="faq-question">
         <h3>
             Question
         </h3>
     </slot>
-    <slot v-slot:faq-answer>
+    <slot name="faq-answer">
         <p>
             Answer
         </p>

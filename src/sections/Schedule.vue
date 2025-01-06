@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useAuthStore } from "../stores";
+import ListItem from "../components/ListItem.vue";
 let scheduleItems = ref<{ time: string; event: string; }[]>([]);
 const dayScheduleItems = [
     {
         event: 'Arrival',
-        time: '14:00',
+        time: '13:30',
+        comment: '(Please arrive at <b> 14:00 </b> latest)'
     },
     {
         time: '14:30',
@@ -13,17 +15,25 @@ const dayScheduleItems = [
     },
     {
         time: '15:00',
-        event: 'Wedding Breakfast',
+        event: 'Drinks',
     },
+    {
+        time: '16:30',
+        event: 'Dinner',
+    }
 ];
 
 const eveningScheduleItems = [
     {
-        time: '17:00',
-        event: 'Reception',
+        time: '19:30',
+        event: 'Evening start',
     },
     {
-        time: '19:30',
+        time: '20:00',
+        event: 'First dance',
+    },
+    {
+        time: '21:00',
         event: 'Pizza',
     },
     {
@@ -47,20 +57,21 @@ if (isDayGuest) {
     <section>
         <div class="container" id="schedule">
             <h2> Schedule </h2>
-            <div>
-                <ol class="schedule-list">
-                    <li
-                    v-for="(item) in scheduleItems"
-                    :key="item.time"
-                    class="list-item"
-                    >
-                        <span class="schedule-time" id="time">
-                        {{ item.time }}
-                        </span>
-                        <span class="schedule-event" id="event">
-                            {{ item.event }}
-                        </span>
-                    </li>
+            <div class="content">
+                <ol class="schedule">
+                    <ListItem v-for="(item) in scheduleItems" :key="item.time" class="list-item">
+                        <template v-slot:list-item-title>
+                            <div class="schedule-time" id="time">
+                                {{ item.time }}
+                            </div>
+                        </template>
+                        <template v-slot:list-item-content>
+                            <div class="schedule-event" id="event">
+                                {{ item.event }}
+                            </div>
+                            <div v-html="item.comment" class="schedule-comment" id="comment"></div>
+                        </template>
+                    </ListItem>
                 </ol>
             </div>
         </div>

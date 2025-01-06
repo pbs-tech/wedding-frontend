@@ -8,6 +8,7 @@
         { name: 'About', href: '#about' },
         { name: 'Venue', href: '#venue' },
         { name: 'Schedule', href: '#schedule' },
+        { name: 'Food', href: '#food' },
         { name: 'Transport', href: '#transport' },
         { name: 'FAQs', href: '#faqs'},
         { name: 'RSVP', href: '#rsvp' },

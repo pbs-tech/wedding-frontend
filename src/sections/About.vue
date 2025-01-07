@@ -5,19 +5,19 @@
 
     const aboutImages: Image[] = [
         {
-            src: new URL('@/assets/about/a.png', import.meta.url).href,
+            src: new URL('@/assets/about/a.jpg', import.meta.url).href,
             alt: "Hana's Birthday"
         },
         {
-            src: new URL('@/assets/about/b.png', import.meta.url).href,
+            src: new URL('@/assets/about/b.jpg', import.meta.url).href,
             alt: "Our first night out together"
         },
         {
-            src: new URL('@/assets/about/c.png', import.meta.url).href,
+            src: new URL('@/assets/about/c.jpg', import.meta.url).href,
             alt: "At a friend's wedding"
         },
         {
-            src: new URL('@/assets/about/d.png', import.meta.url).href,
+            src: new URL('@/assets/about/d.jpg', import.meta.url).href,
             alt: "Our birds (smidge and scrap)"
         },
     ];

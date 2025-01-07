@@ -37,7 +37,7 @@ const eveningScheduleItems = [
         event: 'Pizza',
     },
     {
-        time: '00:00',
+        time: '01:00',
         event: 'Farewell',
     },
 ];

@@ -30,7 +30,7 @@
         @apply mx-auto max-w-4xl bg-background text-lg
     }
     li, .list-item {
-        @apply mx-auto py-1 uppercase font-averia text-primary text-center text-2xl
+        @apply mx-auto py-1 font-averia text-primary text-center text-2xl
     }
     a:hover {
         @apply underline

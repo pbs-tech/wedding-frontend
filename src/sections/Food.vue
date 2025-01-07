@@ -49,7 +49,7 @@ import ListItem from "../components/ListItem.vue";
                         <b> Please note </b> that the vegan and veggie options for the canapés and main are the same. However, please do let us know if you would like the brownie option for dessert.
                     </p>
                     <p>
-                        Let us know any allergies or dietary requirements and we will can this on to the venue.
+                        Let us know any allergies or dietary requirements and we will pass this on to the venue.
                     </p>
                 </div>
             </div>

@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import ListItem from "../components/ListItem.vue";
-    const menu =[
+    const menu = [
         {
             course: "Canapés",
-            dish: "honey roasted sausages with spicy ketchup",
-            vegan_dish: "roasted tomato and red pepper bruschetta",
+            dish: "Honey roasted sausages with spicy ketchup",
+            vegan_dish: "Roasted tomato and red pepper bruschetta",
         },
         {
             course: "Main",
-            dish: "rotisserie Chicken with burnt lemon and herb butter, duck fat roast potatoes with garlic and rosemary and mixed greens",
-            vegan_dish: "roast butternut squash with pesto and vegan ricotta, roast potatoes cooked in olive oil and Mixed greens",
+            dish: "Rotisserie chicken with burnt lemon and herb butter, duck fat roast potatoes with garlic and rosemary and mixed greens",
+            vegan_dish: "Roast butternut squash with pesto and vegan ricotta, roast potatoes cooked in olive oil and Mixed greens",
         },
         {
             course: "Dessert",
-            dish: "chocolate brownie with vanilla mascarpone cream",
-            vegan_dish: "roasted pineapple with spiced caramel and honeycomb ice cream",
+            dish: "Chocolate brownie with vanilla mascarpone cream",
+            vegan_dish: "Roasted pineapple with spiced caramel and honeycomb ice cream",
         }
     ]
 </script>
@@ -37,7 +37,7 @@ import ListItem from "../components/ListItem.vue";
                             <div class="food-dish" id="dish">
                                 {{ item.dish }}
                             </div>
-                            <span id="plant-based-label"> plant-based option: </span>
+                            <span id="plant-based-label"> Plant-based option: </span>
                             <div class="food-dish" id="vegan-dish">
                                 {{ item.vegan_dish }}
                             </div>
@@ -46,10 +46,7 @@ import ListItem from "../components/ListItem.vue";
                 </ol>
                 <div id="food-notes">
                     <p>
-                        <b> Please note </b> that the vegan and veggie options for the canapés and main are the same. However, please do let us know if you would like the brownie option for dessert.
-                    </p>
-                    <p>
-                        Let us know any allergies or dietary requirements and we will can this on to the venue.
+                        Let us know any allergies or dietary requirements and we will pass this on to the venue.
                     </p>
                 </div>
             </div>

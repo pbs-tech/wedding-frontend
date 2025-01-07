@@ -38,6 +38,9 @@
     button {
         @apply text-primary font-beth_ellen
     }
+    ::selection {
+        @apply  bg-highlight text-background
+    }
 }
 
 @layer components {

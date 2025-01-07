@@ -75,6 +75,9 @@ export default defineComponent({
 .swiper-button-prev {
   color: #f5c8c5;
 }
+.swiper-lazy-preloader {
+  background-color: #f87171;
+}
 
 .swiper-pagination-bullet {
   background-color: #f5c8c5;

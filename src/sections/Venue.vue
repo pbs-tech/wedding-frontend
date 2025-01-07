@@ -45,6 +45,8 @@
               <p>
               Should you need accommodation, there are plenty of options in the surrounding area.
               Please visit <a href="https://crippsandco.com/healey-barn/accommodation"> here</a> for more information.
+              </p>
+              <p>
               The venue is also a 30 minute drive from Newcastle city centre should you wish to stay somewhere more central.
               </p>
             </template>

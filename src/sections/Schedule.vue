@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useAuthStore } from "../stores";
 import ListItem from "../components/ListItem.vue";
-let scheduleItems = ref<{ time: string; event: string; }[]>([]);
+let scheduleItems = ref<{ time: string; event: string; comment?: string;}[]>([]);
 const dayScheduleItems = [
     {
         event: 'Arrival',

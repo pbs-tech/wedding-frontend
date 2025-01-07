@@ -10,8 +10,8 @@
             answer: "<p> As we already live together, we’re not doing a traditional gift registry. If you would like to give us a gift, we would be grateful for a contribution towards our honeymoon. </p>"
         },
         {
-            question: "Can we take our own photos?",
-            answer: "<p> We ask that you please refrain from taking photos during the ceremony, speeches and first dance as we’ve hired a photographer and videographer to capture these special moments. </p>"
+            question: "Will there be photos / videos taken on the day?",
+            answer: "<p> Of course! We ask that you please refrain from taking your own photos during the ceremony, speeches and first dance as we’ve hired a photographer and videographer to capture these special moments. We can share these with you once we get them. </p>"
         },
         {
             question: "Can I bring a plus one?",

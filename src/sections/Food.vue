@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ListItem from "../components/ListItem.vue";
-    const menu =[
+    const menu = [
         {
             course: "Canapés",
             dish: "Honey roasted sausages with spicy ketchup",

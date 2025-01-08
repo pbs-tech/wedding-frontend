@@ -15,7 +15,6 @@ interface AuthState {
 }
 
 const baseUrl = `${import.meta.env.VITE_API_URL}`;
-const corsUrl = `${import.meta.env.VITE_CORS_URL}`;
 
 export const useAuthStore = defineStore({
   id: "auth",
@@ -36,7 +35,6 @@ export const useAuthStore = defineStore({
           { "UserPassword": password },
           { headers: {
             "Content-Type": "application/json",
-            "Origin": `${corsUrl}`,
            } }
         );
         console.log('Received token:', response.data.jwtToken);

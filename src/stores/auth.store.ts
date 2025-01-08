@@ -15,6 +15,7 @@ interface AuthState {
 }
 
 const baseUrl = `${import.meta.env.VITE_API_URL}`;
+const corsUrl = `${import.meta.env.VITE_CORS_URL}`;
 
 export const useAuthStore = defineStore({
   id: "auth",
@@ -33,7 +34,10 @@ export const useAuthStore = defineStore({
       try {
         const response = await axios.post<{ jwtToken: string }>(`${baseUrl}/auth`,
           { "UserPassword": password },
-          { headers: { "Content-Type": "application/json" } }
+          { headers: {
+            "Content-Type": "application/json",
+            "Origin": `${corsUrl}`,
+           } }
         );
         console.log('Received token:', response.data.jwtToken);
         console.log('Stored token in localStorage:', localStorage.getItem('jwtToken'));

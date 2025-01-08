@@ -16,8 +16,7 @@ interface AuthState {
 
 const baseUrl = `${import.meta.env.VITE_API_URL}`;
 
-export const useAuthStore = defineStore({
-  id: "auth",
+export const useAuthStore = defineStore('auth', {
   state: (): AuthState => ({
     user: localStorage.getItem("jwtToken")
       ? { jwtToken: localStorage.getItem("jwtToken")!, isDayGuest: Boolean(localStorage.getItem("isDayGuest")) }

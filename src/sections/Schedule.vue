@@ -6,38 +6,38 @@ let scheduleItems = ref<{ time: string; event: string; comment?: string;}[]>([])
 const dayScheduleItems = [
     {
         event: 'Arrival',
-        time: '13:30',
-        comment: '(Please arrive at <b> 14:00 </b> latest)'
+        time: '12:30',
+        comment: '(Please arrive at <b> 12:45 </b> latest)'
     },
     {
-        time: '14:30',
+        time: '13:00',
         event: 'Ceremony',
     },
     {
-        time: '15:00',
+        time: '13:30',
         event: 'Drinks',
     },
     {
-        time: '16:30',
+        time: '15:30',
         event: 'Dinner',
     }
 ];
 
 const eveningScheduleItems = [
     {
-        time: '19:30',
+        time: '18:30',
         event: 'Evening start',
     },
     {
-        time: '20:00',
+        time: '19:00',
         event: 'First dance',
     },
     {
-        time: '21:00',
+        time: '20:30',
         event: 'Pizza',
     },
     {
-        time: '01:00',
+        time: '00:00',
         event: 'Farewell',
     },
 ];

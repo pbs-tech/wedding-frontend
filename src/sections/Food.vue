@@ -4,6 +4,7 @@ import ListItem from "../components/ListItem.vue";
         {
             course: "Canapés",
             dish: "Honey roasted sausages with spicy ketchup",
+            veg_dish: "Grilled halloumi with rosemary and olive oil",
             vegan_dish: "Roasted tomato and red pepper bruschetta",
         },
         {
@@ -36,6 +37,9 @@ import ListItem from "../components/ListItem.vue";
                         <template v-slot:list-item-content>
                             <div class="food-dish" id="dish">
                                 {{ item.dish }}
+                            </div>
+                            <div class="food-dish" id="veg-dish">
+                                {{ item.veg_dish }}
                             </div>
                             <span id="plant-based-label"> Plant-based option: </span>
                             <div class="food-dish" id="vegan-dish">

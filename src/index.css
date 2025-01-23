@@ -98,7 +98,7 @@
     #food-notes {
         @apply text-center
     }
-    #plant-based-label {
+    #plant-based-label, #veg-label {
         @apply font-bold
     }
     #course {

@@ -38,8 +38,11 @@ import ListItem from "../components/ListItem.vue";
                             <div class="food-dish" id="dish">
                                 {{ item.dish }}
                             </div>
-                            <div class="food-dish" id="veg-dish">
-                                {{ item.veg_dish }}
+                            <div v-if="item.veg_dish">
+                                <span id="veg-label"> Vegetarian option: </span>
+                                <div class="food-dish" id="veg-dish">
+                                    {{ item.veg_dish }}
+                                </div>
                             </div>
                             <span id="plant-based-label"> Plant-based option: </span>
                             <div class="food-dish" id="vegan-dish">

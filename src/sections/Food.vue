@@ -33,6 +33,7 @@ import ListItem from "../components/ListItem.vue";
                             <div class="food-course" id="course">
                                 {{ item.course }}
                             </div>
+                            <br/>
                         </template>
                         <template v-slot:list-item-content>
                             <div class="food-dish" id="dish">
@@ -48,6 +49,8 @@ import ListItem from "../components/ListItem.vue";
                             <div class="food-dish" id="vegan-dish">
                                 {{ item.vegan_dish }}
                             </div>
+                            <br/>
+
                         </template>
                     </ListItem>
                 </ol>

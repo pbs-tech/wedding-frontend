@@ -6,15 +6,15 @@ let scheduleItems = ref<{ time: string; event: string; comment?: string;}[]>([])
 const dayScheduleItems = [
     {
         event: 'Arrival',
-        time: '13:00',
-        comment: '(Please arrive at <b> 13:00 </b> latest)'
-    },
-    {
         time: '13:30',
-        event: 'Ceremony',
+        comment: '(Please arrive at <b> 13:30 </b> latest)'
     },
     {
         time: '14:00',
+        event: 'Ceremony',
+    },
+    {
+        time: '14:30',
         event: 'Drinks',
     },
     {

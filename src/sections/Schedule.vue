@@ -18,26 +18,26 @@ const dayScheduleItems = [
         event: 'Drinks',
     },
     {
-        time: '15:30',
+        time: '16:00',
         event: 'Dinner',
     }
 ];
 
 const eveningScheduleItems = [
     {
-        time: '18:30',
+        time: '19:00',
         event: 'Evening start',
     },
     {
-        time: '19:00',
+        time: '20:00',
         event: 'First dance',
     },
     {
-        time: '20:30',
+        time: '21:00',
         event: 'Pizza',
     },
     {
-        time: '00:00',
+        time: '01:00',
         event: 'Farewell',
     },
 ];

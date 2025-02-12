@@ -2,8 +2,10 @@
     import { ref } from 'vue'
     import CakeImg from '../assets/cake.svg'
     import HamburgerMenuImg from '../assets/hamburger.svg'
+    import { useAuthStore } from "../stores";
 
-
+    let startTime = ref<string>();
+    let inviteHeading = ref<string>();
     const links = ref([
         { name: 'About', href: '#about' },
         { name: 'Venue', href: '#venue' },
@@ -17,6 +19,17 @@
 
     function toggleMenu() {
     isMenuOpen.value = !isMenuOpen.value;
+    }
+    const authStore = useAuthStore();
+    const isDayGuest = authStore.isDayGuest();
+
+    if (isDayGuest) {
+        startTime = ref('13:30');
+        inviteHeading = ref('wedding')
+    } else {
+        startTime = ref('19:00');
+        inviteHeading = ref('evening reception')
+
     }
 </script>
 
@@ -37,13 +50,15 @@
             </div>
             </div>
             <div class="header">
-                <h4 id="header-text">We'd love to invite you to the wedding of: </h4>
+                <h4 id="header-text">We'd love to invite you to the {{inviteHeading}} of: </h4>
                 <CakeImg class="svg-img"/>
                 <h1 >Alex Peebles & Hana McRae</h1>
                 <p class="subheading">
                     <span class="flair"> on </span>
                     <br/>
                     <span id="header-date"> 6th August 2025 </span>
+                    <br/>
+                    <span id="header-time">{{  startTime }} </span>
                     <br/>
                     <span class="flair"> at </span>
                     <br/>

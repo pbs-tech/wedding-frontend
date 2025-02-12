@@ -122,7 +122,7 @@
     .loading-text {
         @apply flex justify-center min-w-fit
     }
-    #header-date {
+    #header-date, #header-time {
         @apply font-bold text-3xl
     }
     #header-location {

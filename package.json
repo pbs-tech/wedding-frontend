@@ -23,7 +23,7 @@
     "@vitejs/plugin-vue": "^5.1.4",
     "autoprefixer": "^10.4.20",
     "aws-cdk": "^2.163.1",
-    "aws-cdk-lib": "^2.163.1",
+    "aws-cdk-lib": "^2.183.0",
     "constructs": "^10.4.2",
     "esbuild": "^0.24.0",
     "eslint": "^9.17.0",

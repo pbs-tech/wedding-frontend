@@ -21,7 +21,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/bcryptjs": "^2.4.6",
     "@vitejs/plugin-vue": "^5.1.4",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "aws-cdk": "^2.163.1",
     "aws-cdk-lib": "^2.163.1",
     "constructs": "^10.4.2",

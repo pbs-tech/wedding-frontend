@@ -9,9 +9,9 @@
                     You can also message us using the numbers / links below:
                 </p>
                 <ul class="contact-list">
-                    <li> <a href="https://wa.me/447519019492"> <b>Alex </b> <br/> 07519 019492 </a> </li>
+                    <li> <a href="https://wa.me/<REDACTED>"> <b>Alex </b> <br/> <REDACTED> </a> </li>
                     <li class="flair"> or </li>
-                    <li> <a href="https://wa.me/447925323837"> <b> Hana </b> <br/> 07925 323837 </a> </li>
+                    <li> <a href="https://wa.me/<REDACTED"> <b> Hana </b> <br/> <REDACTED> </a> </li>
                 </ul>
             </div>
         </div>

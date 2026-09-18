@@ -1,11 +1,92 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
+# Dependency updates for the npm package at the root and the actions used in
+# .github/workflows.
+#
+# This replaces the generated starter config, which ran daily with no grouping.
+# Updates are grouped by the release train they come from, because these
+# packages are only coherent when moved together: aws-cdk, aws-cdk-lib and
+# constructs are version-checked against each other at synth time, the
+# @aws-amplify packages likewise, and vue-tsc tracks the vue compiler.
+# Bumping either half of those pairs on its own is how you get a red build
+# from a "routine" patch.
+#
+# Every group is restricted to minor and patch, so a major is always raised on
+# its own and always lands in front of a human. dependabot-auto-merge.yml
+# depends on that: it only approves and merges minor and patch, and only once
+# the build check on the PR has passed.
 version: 2
+
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: npm
+    directory: /
     schedule:
-      interval: "daily"
+      interval: weekly
+      day: monday
+      time: '07:00'
+      timezone: Europe/London
+    open-pull-requests-limit: 5
+    groups:
+      aws-cdk:
+        patterns:
+          - 'aws-cdk'
+          - 'aws-cdk-lib'
+          - 'constructs'
+        update-types:
+          - minor
+          - patch
+      aws-amplify:
+        patterns:
+          - 'aws-amplify'
+          - '@aws-amplify/*'
+        update-types:
+          - minor
+          - patch
+      vue:
+        patterns:
+          - 'vue'
+          - 'vue-router'
+          - 'vue-tsc'
+          - '@vitejs/plugin-vue'
+        update-types:
+          - minor
+          - patch
+      production-dependencies:
+        dependency-type: production
+        exclude-patterns:
+          - 'aws-cdk*'
+          - 'constructs'
+          - 'aws-amplify'
+          - '@aws-amplify/*'
+          - 'vue'
+          - 'vue-router'
+        update-types:
+          - minor
+          - patch
+      development-dependencies:
+        dependency-type: development
+        exclude-patterns:
+          - 'aws-cdk*'
+          - 'constructs'
+          - 'aws-amplify'
+          - '@aws-amplify/*'
+          - 'vue-tsc'
+          - '@vitejs/plugin-vue'
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    # '/' means .github/workflows for this ecosystem, not a directory named '/'.
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '07:00'
+      timezone: Europe/London
+    open-pull-requests-limit: 3
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch

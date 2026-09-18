@@ -3,7 +3,7 @@
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
     "@types/bcrypt": "^5.0.2",
-    "aws-amplify": "^6.6.6",
+    "aws-amplify": "^6.20.0",
     "axios": "^1.18.0",
     "bcryptjs": "^3.0.2",
     "crypto-browserify": "^3.12.1",
@@ -15,8 +15,8 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^1.5.0",
-    "@aws-amplify/backend-cli": "^1.2.9",
+    "@aws-amplify/backend": "^1.25.0",
+    "@aws-amplify/backend-cli": "^1.10.0",
     "@eslint/js": "^9.17.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/bcryptjs": "^3.0.0",

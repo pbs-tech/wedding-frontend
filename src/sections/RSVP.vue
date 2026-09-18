@@ -9,9 +9,9 @@
                     You can also message us using the numbers / links below:
                 </p>
                 <ul class="contact-list">
-                    <li> <a href="https://wa.me/<REDACTED>"> <b>Alex </b> <br/> <REDACTED> </a> </li>
+                    <li> <a href="https://wa.me/REDACTED"> <b>Alex </b> <br/> REDACTED </a> </li>
                     <li class="flair"> or </li>
-                    <li> <a href="https://wa.me/<REDACTED"> <b> Hana </b> <br/> <REDACTED> </a> </li>
+                    <li> <a href="https://wa.me/REDACTED"> <b> Hana </b> <br/> REDACTED </a> </li>
                 </ul>
             </div>
         </div>

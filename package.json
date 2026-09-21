@@ -17,7 +17,7 @@
   "devDependencies": {
     "@aws-amplify/backend": "^1.25.0",
     "@aws-amplify/backend-cli": "^1.10.0",
-    "@eslint/js": "^9.17.0",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/bcryptjs": "^3.0.0",
     "@vitejs/plugin-vue": "^6.0.9",

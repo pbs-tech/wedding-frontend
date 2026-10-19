@@ -11,7 +11,7 @@
     "pinia-plugin-persistedstate": "^4.7.1",
     "swiper": "^12.1.2",
     "vee-validate": "^4.15.1",
-    "vue": "^3.5.42",
+    "vue": "^3.5.44",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
@@ -20,7 +20,7 @@
     "@eslint/js": "^9.17.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/bcryptjs": "^3.0.0",
-    "@vitejs/plugin-vue": "^6.0.9",
+    "@vitejs/plugin-vue": "^6.0.10",
     "autoprefixer": "^10.6.1",
     "aws-cdk": "^2.1142.0",
     "aws-cdk-lib": "^2.270.0",
